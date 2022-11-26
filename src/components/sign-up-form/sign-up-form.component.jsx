@@ -14,7 +14,7 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
-const SignUp = () => {
+const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {displayName, email, password, confirmPassword} = formFields;
 
@@ -51,7 +51,7 @@ const SignUp = () => {
   return (
     <div className="sign-up-container">
       <h2>Don't have an account?</h2>
-      <spem>Sign Up with Email & Password</spem>
+      <span>Sign Up with Email & Password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -102,4 +102,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm;
