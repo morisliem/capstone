@@ -1,4 +1,7 @@
-import "./cart-dropdown.styles.scss";
+import {
+  CartItemsStyle,
+  CartDropdownContainerStyle,
+} from "./cart-dropdown.styles.jsx";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import {CartContext} from "../../contexts/cart.context";
@@ -13,16 +16,16 @@ const CartDropdown = () => {
     navigate("/checkout");
   };
   return (
-    <div className="cart-dropdown-container">
-      <div className="cart-items">
+    <CartDropdownContainerStyle>
+      <CartItemsStyle>
         {cartItems.map((item) => (
           <CartItem key={item.id} cartItem={item} />
         ))}
-      </div>
+      </CartItemsStyle>
       <Button buttonType="inverted" onClick={goToCheckoutHandler}>
         Go To Checkout
       </Button>
-    </div>
+    </CartDropdownContainerStyle>
   );
 };
 
