@@ -25,6 +25,7 @@ export const DirectoryBodyStyle = styled.div`
     margin: 0 6px 0;
     font-size: 22px;
     color: #4a4a4a;
+    text-transform: uppercase;
   }
 
   p {
@@ -55,10 +56,6 @@ export const DirectoryItemContainerStyle = styled.div`
     ${DirectoryBodyStyle} {
       opacity: 0.9;
     }
-  }
-
-  &.large {
-    height: 380px;
   }
 
   &:first-child {

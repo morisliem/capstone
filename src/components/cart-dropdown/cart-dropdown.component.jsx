@@ -1,6 +1,7 @@
 import {
   CartItemsStyle,
   CartDropdownContainerStyle,
+  EmptyMessage,
 } from "./cart-dropdown.styles.jsx";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
@@ -18,13 +19,13 @@ const CartDropdown = () => {
   return (
     <CartDropdownContainerStyle>
       <CartItemsStyle>
-        {cartItems.map((item) => (
-          <CartItem key={item.id} cartItem={item} />
-        ))}
+        {cartItems.length ? (
+          cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+        ) : (
+          <EmptyMessage>Your cart is empty</EmptyMessage>
+        )}
       </CartItemsStyle>
-      <Button buttonType="inverted" onClick={goToCheckoutHandler}>
-        Go To Checkout
-      </Button>
+      <Button onClick={goToCheckoutHandler}>Go To Checkout</Button>
     </CartDropdownContainerStyle>
   );
 };
