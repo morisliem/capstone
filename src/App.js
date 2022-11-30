@@ -15,7 +15,7 @@ const App = () => {
             <Home />
           } /*index key word to make the home persist in the route*/
         />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop/*" element={<Shop />} />
         <Route path="auth" element={<Authentication />} />
         <Route path="checkout" element={<Checkout />} />
       </Route>
